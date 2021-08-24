@@ -1,0 +1,102 @@
+*{
+	margin: 0px;
+	border: 0px;
+	padding: 0px;
+}
+
+section#animacion{
+	margin: 80px auto;
+	height: 480px;
+	width: 640px;
+	position: relative;
+	overflow: hidden;
+}
+
+article{
+	position: absolute;
+}
+
+article#nubes{
+	background: url(../imgs/back.png) repeat-x;
+	height: 480px;
+	width: 1280px; /* 640px * 2 = 1280 */
+	z-index: 1;
+	-webkit-animation: mover 30s linear infinite;
+			animation: mover 30s linear infinite;
+}
+
+article#montanas{
+	background: url(../imgs/middle.png) repeat-x;
+	height: 480px;
+	width: 1280px; /* 640px * 2 = 1280 */
+	z-index: 2;
+	-webkit-animation: mover 20s linear infinite;
+			animation: mover 20s linear infinite;
+}
+
+article#piso{
+	background: url(../imgs/front.png) repeat-x;
+	height: 480px;
+	width: 1280px; /* 640px * 2 = 1280 */
+	z-index: 3;
+	-webkit-animation: mover 5s linear infinite;
+			animation: mover 5s linear infinite;
+}
+
+article#texto{
+	background: url(../imgs/text.png);
+	height: 480px;
+	width: 640px;
+	bottom: 35px;
+	z-index: 4;
+	-webkit-animation: texto .9s ease-in-out infinite;
+			animation: texto .9s ease-in-out infinite;
+}
+
+article#mario{
+	background: url(../imgs/mario.gif);
+	height: 80px;
+	width: 80px;
+	top: 380px;
+	left: 120px;
+	z-index: 5;
+	-webkit-animation: mario 3s ease-in-out infinite;
+			animation: mario 3s ease-in-out infinite;
+}
+
+
+@-webkit-keyframes mover{
+	0%  { left: 0px; }
+	100%{ left: -640px; }
+}
+
+@keyframes mover{
+	0%  { left: 0px; }
+	100%{ left: -640px; }
+}
+
+@-webkit-keyframes texto{
+	0%,100% { -webkit-transform: scale(1) }
+	50%     { -webkit-transform: scale(.9) }
+}
+
+@keyframes texto{
+	0%,100% { transform: scale(1) }
+	50%     { transform: scale(.9) }
+}
+
+@-webkit-keyframes mario{
+	0%   { top: 380px; -webkit-transform: rotate(0deg); }
+	90%  { top: 380px; -webkit-transform: rotate(0deg); }
+	93%  { top: 280px; -webkit-transform: rotate(0deg); }
+	95%  { top: 280px; -webkit-transform: rotate(-40deg); }
+	100% { top: 380px; -webkit-transform: rotate(0deg); }
+}
+
+@keyframes mario{
+	0%   { top: 380px; transform: rotate(0deg); }
+	90%  { top: 380px; transform: rotate(0deg); }
+	93%  { top: 280px; transform: rotate(0deg); }
+	95%  { top: 280px; transform: rotate(-40deg); }
+	100% { top: 380px; transform: rotate(0deg); }
+}

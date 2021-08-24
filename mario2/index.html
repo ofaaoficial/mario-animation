@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <style>
+        #screen {
+            width: 640px;
+            height: 480px;
+            overflow: hidden;
+            margin: auto;
+            position: relative;
+        }
+
+        .element {
+            width: 1280px;
+            height: 480px;
+            position: absolute;
+        }
+
+        #back {
+            background-image: url(imgs/back.png);
+            animation: movimiento 15s infinite linear;
+        }
+
+        #front {
+            background-image: url(imgs/front.png);
+            animation: movimiento 10s infinite linear;
+        }
+
+        #middle {
+            background-image: url(imgs/middle.png);
+            animation: movimiento 8s infinite linear;
+        }
+
+        #mario {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background-image: url(imgs/mario.gif);
+            bottom: 40px;
+            left: 60px;
+        }
+
+        #text {
+            width: 640px;
+            height: 480px;
+            position: absolute;
+            background-image: url(imgs/text.png);
+            animation: scale .4s infinite linear;
+            animation-direction: alternate;            
+        }
+
+        @keyframes scale {
+            0% {
+                transform: scale(1)
+            }
+            100% {
+                transform: scale(1.06)
+            }
+            /* 100%, 20%, 30% */
+        }
+
+
+        @keyframes movimiento {
+            from {
+                background-position: 0px;
+            }
+
+            to {
+                background-position: -640px;
+            }
+        }
+    </style>
+    <div id="screen">
+        <div id="back" class="element"></div>
+        <div id="middle" class="element"></div>
+        <div id="front" class="element"></div>
+        <div id="mario"></div>
+        <div id="text"></div>
+    </div>
+
+</body>
+
+</html>
